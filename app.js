@@ -9,10 +9,12 @@
     $scope.mesige="";
     $scope.odgovor= function(){
       var poruka="";//napravi odgovarajucu poruku yavisno od broja jela
+      if ($scope.name=="") poruka="Please enter data first";
+      else{
       if(BrReci($scope.name)>3)
         poruka="Too much!"
       else
-        poruka="Enjoy!";
+        poruka="Enjoy!";}
       $scope.mesige=poruka;
     };
     function BrReci(string){
